@@ -37,8 +37,8 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'Smoke',
-        yAxisID: 'Smoke',
+        label: 'SmokeRate',
+        yAxisID: 'SmokeRate',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
         backgroundColor: "rgba(255, 204, 0, 0.4)",
@@ -85,10 +85,10 @@ $(document).ready(function () {
                   },
                   scales: {
                   yAxes: [{
-                          id: 'Smoke',
+                          id: 'SmokeRate',
                           type: 'linear',
                           scaleLabel: {
-                          labelString: 'Smoke',
+                          labelString: 'SmokeRate',
                           display: true
                           },
                           position: 'left',
@@ -108,9 +108,9 @@ $(document).ready(function () {
   });
 
     var myLineChart2 = new Chart(ctx2, {
-                                              type: 'line',
-                                              data: data2,
-                                              options: basicOption2
+                                      type: 'line',
+                                      data: data2,
+                                      options: basicOption2
                                               });
 
   var ws = new WebSocket('wss://' + location.host);
@@ -121,11 +121,12 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.time || !obj.temperature || !obj.smokeRate) {
+      if(!obj.time || !obj.temperature) {
         return;
       }
       timeData.push(obj.time);
       temperatureData.push(obj.temperature);
+      smokeData.push(obj.smokeRate);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
       var len = timeData.length;

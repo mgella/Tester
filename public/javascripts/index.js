@@ -105,7 +105,7 @@ $(document).ready(function () {
   });
   var myLineChart3 = new Chart(ctx3, {
     type: 'line',
-    data: data,
+    data: data3,
     options: basicOption3
   });
 

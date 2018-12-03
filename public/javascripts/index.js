@@ -75,6 +75,25 @@ $(document).ready(function () {
     }
   }
 
+  var basicOption3 = {
+                  title: {
+                  display: true,
+                  text: 'Smoke Real-time Data',
+                  fontSize: 36
+                  },
+                  scales: {
+                  yAxes: [{
+                          id: 'Smoke',
+                          type: 'linear',
+                          scaleLabel: {
+                          labelString: 'Smoke',
+                          display: true
+                          },
+                          position: 'left',
+                          }]
+                  }
+                  }
+
   //Get the context of the canvas element we want to select
   var ctx = document.getElementById("myChart").getContext("2d");
   var optionsNoAnimation = { animation: false }

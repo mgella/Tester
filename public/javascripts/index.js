@@ -1,7 +1,7 @@
-\$(document).ready(function () {
+$(document).ready(function () {
   var timeData = [],
     temperatureData = [],
-humidityData = [];
+    humidityData = [];
   var data = {
     labels: timeData,
     datasets: [

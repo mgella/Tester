@@ -31,7 +31,22 @@ $(document).ready(function () {
     ]
   }
 
- 
+   var data3 = {
+                  labels: timeData,
+                  datasets: [
+                             {
+                             fill: false,
+                             label: 'Smoke',
+                             yAxisID: 'Smoke',
+                             borderColor: "rgba(255, 204, 0, 1)",
+                             pointBoarderColor: "rgba(255, 204, 0, 1)",
+                             backgroundColor: "rgba(255, 204, 0, 0.4)",
+                             pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
+                             pointHoverBorderColor: "rgba(255, 204, 0, 1)",
+                             data: smokeRateData
+                             }
+                             ]
+                  }
 
   var basicOption = {
     title: {

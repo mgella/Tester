@@ -103,6 +103,11 @@ $(document).ready(function () {
     data: data,
     options: basicOption
   });
+  var myLineChart3 = new Chart(ctx3, {
+    type: 'line',
+    data: data,
+    options: basicOption3
+  });
 
   var ws = new WebSocket('wss://' + location.host);
   ws.onopen = function () {

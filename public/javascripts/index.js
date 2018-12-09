@@ -167,7 +167,7 @@ $(document).ready(function () {
       timeData.push(obj.time);
       temperatureData.push(obj.temperature);
       smokeRateData.push(obj.smokeRate);
-      heartRateData.push(obj.heartRateData);
+      heartRateData.push(obj.heartRate);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
       var len = timeData.length;

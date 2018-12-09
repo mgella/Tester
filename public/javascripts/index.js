@@ -191,6 +191,12 @@ $(document).ready(function () {
     $("#label2").html(obj.temperature);
     $("#label3").html(obj.humidity);
     $("#label4").html(obj.smokeRate);
+    var msg;
+    if(obj.smokeRate>3000&&obj.smokeRate<7000){
+      msg = "Please Stop Smoking";
+      $("#label5").html(msg);
+    }
+    }
     } catch (err) {
       console.error(err);
     }

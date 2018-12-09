@@ -197,8 +197,8 @@ $(document).ready(function () {
       $("#label5").html(msg);
     }
     }
-    } catch (err) {
+    catch (err) {
       console.error(err);
     }
-  
+  }
 });

@@ -122,7 +122,7 @@ $(document).ready(function () {
       }
       timeData.push(obj.time);
       temperatureData.push(obj.temperature);
-      smokeRateData.push(obj.smokeRate);
+      smokeRateData.push(obj.temperature);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
       var len = timeData.length;
@@ -139,7 +139,7 @@ $(document).ready(function () {
       }
       
       myLineChart.update();
-      
+      myLineChart3.update();
     } catch (err) {
       console.error(err);
     }

@@ -185,7 +185,7 @@ $(document).ready(function () {
       
       myLineChart.update();
       myLineChart3.update();
-      myLineChart4.update();
+      
     } catch (err) {
       console.error(err);
     }

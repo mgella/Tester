@@ -194,6 +194,8 @@ $(document).ready(function () {
     var msg;
     if(obj.smokeRate>3000&&obj.smokeRate<7000){
       msg = "Please Stop Smoking";
+      else
+        msg = "You are not smoking now";
       $("#label5").html(msg);
     }
     }

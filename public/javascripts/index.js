@@ -187,6 +187,7 @@ $(document).ready(function () {
       myLineChart3.update();
       if(obj.contact == 0) // there's no contact if contact ==1
       myLineChart4.update();
+    $("#label1").html(obj.temperature);
     } catch (err) {
       console.error(err);
     }

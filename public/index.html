@@ -16,20 +16,30 @@
       <div id="table1" style="display:flex">
         <table bgcolor="#00FF00" id="labels" style="width:100%; height:225">
             <tr>
-				<td bgcolor="#fff"><p id="label1"></p><p class="labels">Your Heart Rate</p></td>
+				<td bgcolor="#fff"><p class="labels">Your Heart Rate</p><p id="label1"></p></td>
                 </tr>
             
             <tr>
-                <td bgcolor="#fff"><p id="label2"></p><p class="labels">Your Temperature</p></td>
+                <td bgcolor="#fff"><p class="labels">Your Temperature</p><p id="label2"></p></td>
                
             </tr>
             <tr>
-                <td bgcolor="#fff"><p id="label3"></p><p class="labels">Your Humidity</p></td>
+                <td bgcolor="#fff"><p class="labels">Your Humidity</p><p id="label3"></p></td>
                
             </tr>
            
             </table>
     </div>
+
+<script>
+var smokeRate = document.getElementById("label4");
+var greeting;
+if(smokeRate>1)
+greeting = "Works";
+document.getElementById("demo").innerHTML = greeting;
+</script>
+
+   <p id="demo"></p>
 </body>
 
 </html>

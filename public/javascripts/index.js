@@ -2,6 +2,7 @@ $(document).ready(function () {
   var timeData = [],
     temperatureData = [],
     smokeRateData = [],
+    heartRateData = [],
     humidityData = [];
   var data = {
     labels: timeData,
@@ -44,6 +45,23 @@ $(document).ready(function () {
                              pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
                              pointHoverBorderColor: "rgba(255, 204, 0, 1)",
                              data: smokeRateData
+                             }
+                             ]
+                  }
+
+                  var data4 = {
+                  labels: timeData,
+                  datasets: [
+                             {
+                             fill: false,
+                             label: 'Heart',
+                             yAxisID: 'Heart',
+                             borderColor: "rgba(255, 204, 0, 1)",
+                             pointBoarderColor: "rgba(255, 204, 0, 1)",
+                             backgroundColor: "rgba(255, 204, 0, 0.4)",
+                             pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
+                             pointHoverBorderColor: "rgba(255, 204, 0, 1)",
+                             data: heartRateData
                              }
                              ]
                   }
@@ -94,9 +112,30 @@ $(document).ready(function () {
                   }
                   }
 
+
+   var basicOption4 = {
+                  title: {
+                  display: true,
+                  text: 'Heart Rate Real-time Data',
+                  fontSize: 36
+                  },
+                  scales: {
+                  yAxes: [{
+                          id: 'Heart',
+                          type: 'linear',
+                          scaleLabel: {
+                          labelString: 'Heart',
+                          display: true
+                          },
+                          position: 'left',
+                          }]
+                  }
+                  }
+
   //Get the context of the canvas element we want to select
   var ctx = document.getElementById("myChart").getContext("2d");
   var ctx3 = document.getElementById("myChart3").getContext("2d");
+  var ctx4 = document.getElementById("myChart4").getContext("2d");
   var optionsNoAnimation = { animation: false }
   var myLineChart = new Chart(ctx, {
     type: 'line',
@@ -107,6 +146,11 @@ $(document).ready(function () {
     type: 'line',
     data: data3,
     options: basicOption3
+  });
+  var myLineChart4 = new Chart(ctx4, {
+    type: 'line',
+    data: data4,
+    options: basicOption4
   });
 
   var ws = new WebSocket('wss://' + location.host);
@@ -123,6 +167,7 @@ $(document).ready(function () {
       timeData.push(obj.time);
       temperatureData.push(obj.temperature);
       smokeRateData.push(obj.smokeRate);
+      heartRateData.push(obj.heartRateData);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
       var len = timeData.length;
@@ -140,6 +185,7 @@ $(document).ready(function () {
       
       myLineChart.update();
       myLineChart3.update();
+      myLineChart4.update();
     } catch (err) {
       console.error(err);
     }

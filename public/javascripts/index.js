@@ -185,7 +185,8 @@ $(document).ready(function () {
       
       myLineChart.update();
       myLineChart3.update();
-      
+      if(obj.contact == 0) // there's no contact if contact ==1
+      myLineChart4.update();
     } catch (err) {
       console.error(err);
     }

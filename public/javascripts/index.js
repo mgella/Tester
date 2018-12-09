@@ -191,11 +191,10 @@ $(document).ready(function () {
     $("#label2").html(obj.temperature);
     $("#label3").html(obj.humidity);
     $("#label4").html(obj.smokeRate);
-    var msg;
+    var msg="You are not smoking";
     if(obj.smokeRate>3000&&obj.smokeRate<7000){
       msg = "Please Stop Smoking";
-      else
-        msg = "You are not smoking now";
+
       $("#label5").html(msg);
     }
     }

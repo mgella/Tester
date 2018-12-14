@@ -192,6 +192,7 @@ $(document).ready(function () {
     $("#label3").html(obj.humidity);
     $("#label4").html(obj.smokeRate);
     var msg="You are not smoking";
+    $("#label5").html(msg);
     if(obj.smokeRate>3000&&obj.smokeRate<7000){
       msg = "Please Stop Smoking";
 

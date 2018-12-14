@@ -191,12 +191,19 @@ $(document).ready(function () {
     $("#label2").html(obj.temperature);
     $("#label3").html(obj.humidity);
     $("#label4").html(obj.smokeRate);
-    var msg="Great Job ! You are not smoking";
+    var msg="Great Job ! You are not smoking and your heart rate is normal!";
+    var msg2="Your perspiration is noramal!"
     $("#label5").html(msg);
+    $("#label6").html(msg);
     if(obj.smokeRate>3000&&obj.smokeRate<7000){
       msg = "Please Stop Smoking";
 
       $("#label5").html(msg);
+    }
+    if(obj.humidity>99){
+      msg2 = "Your perspiration is high!";
+
+      $("#label6").html(msg2);
     }
     }
     catch (err) {

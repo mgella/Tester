@@ -199,7 +199,7 @@ $(document).ready(function () {
     $("#label5").html(msg);
     $("#label6").html(msg2);
     $("#label7").html(stressLevel);
-    if(obj.smokeRate>3000&&obj.smokeRate<7000){
+    if(obj.smokeRate>2000&&obj.smokeRate<7000){
       msg = "Please Stop Smoking";
 
       $("#label5").html(msg);

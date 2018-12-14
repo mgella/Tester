@@ -192,9 +192,13 @@ $(document).ready(function () {
     $("#label3").html(obj.humidity);
     $("#label4").html(obj.smokeRate);
     var msg="Great Job ! You are not smoking and your heart rate is normal!";
-    var msg2="Your perspiration is normal!"
+    var msg2="Your perspiration is normal!";
+    var stressLevel= "1";
+    if(obj.heartRate>80)
+    	stressLevel="5";
     $("#label5").html(msg);
     $("#label6").html(msg2);
+    $("#label7").html(stressLevel);
     if(obj.smokeRate>3000&&obj.smokeRate<7000){
       msg = "Please Stop Smoking";
 
